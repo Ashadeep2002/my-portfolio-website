@@ -55,17 +55,6 @@ Portfolio_website/
 │   └── README.md
 ```
 
-### Color Scheme
-Modify CSS variables in `frontend/src/index.css`:
-```css
-:root {
-  --primary: #667eea;
-  --secondary: #764ba2;
-  --accent: #f093fb;
-  /* ... */
-}
-```
-
 ## 🔧 Technologies Used
 
 ### Frontend
