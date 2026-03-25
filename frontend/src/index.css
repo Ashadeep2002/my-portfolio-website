@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #667eea;
+  --primary-dark: #5568d3;
+  --secondary: #764ba2;
+  --background: #0f0f1e;
+  --surface: #1a1a2e;
+  --text: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent: #f093fb;
+  --success: #00d4ff;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body.dark-theme {
+  --background: #0f0f1e;
+  --surface: #1a1a2e;
+  --text: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent: #f093fb;
+  --card: rgba(102, 126, 234, 0.1);
+  --card-border: rgba(102, 126, 234, 0.2);
+  --overlay: rgba(15, 15, 30, 0.95);
+}
+
+body.light-theme {
+  --background: #f2f6ff;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --text-secondary: #4b5563;
+  --accent: #667eea;
+  --card: rgba(230, 236, 255, 0.6);
+  --card-border: rgba(148, 163, 184, 0.3);
+  --overlay: rgba(255, 255, 255, 0.95);
+}
+
+body.light-theme .navbar,
+body.light-theme .footer,
+body.light-theme .hero,
+body.light-theme .about,
+body.light-theme .projects,
+body.light-theme .contact,
+body.light-theme .skills {
+  background: var(--surface) !important;
+}
+
+body.light-theme .nav-link,
+body.light-theme .logo,
+body.light-theme .theme-toggle,
+body.light-theme .project-card h3,
+body.light-theme .project-card p,
+body.light-theme .contact-info h3,
+body.light-theme .about-text p,
+body.light-theme .hero-title,
+body.light-theme .hero-subtitle,
+body.light-theme .hero-description,
+body.light-theme .skill-category h3,
+body.light-theme .skill-tag,
+body.light-theme .stat-card h3,
+body.light-theme .stat-card p,
+body.light-theme .footer-bottom p,
+body.light-theme .footer-section p {
+  color: var(--text) !important;
+}
+
+body.light-theme .nav-link {
+  color: #334155 !important;
+}
+
+body.light-theme .nav-link:hover,
+body.light-theme .project-link:hover,
+body.light-theme .contact-method a:hover,
+body.light-theme .theme-toggle:hover,
+body.light-theme .social-link:hover {
+  color: var(--accent) !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
