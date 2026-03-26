@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import './Contact.css';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -27,15 +29,17 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/contact', formData);
+      await axios.post(`${API_URL}/api/contact`, formData);
+
       setSubmitStatus({ type: 'success', message: 'Message sent successfully!' });
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
+
       setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
-      setSubmitStatus({ 
-        type: 'error', 
-        message: 'Failed to send message. Please try again.' 
+      console.error(error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again.'
       });
     } finally {
       setIsSubmitting(false);
@@ -51,9 +55,9 @@ const Contact = () => {
         viewport={{ once: true }}
       >
         <h2 className="section-title gradient-text">Get In Touch</h2>
-        
+
         <div className="contact-container">
-          <motion.div 
+          <motion.div
             className="contact-info"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -62,7 +66,7 @@ const Contact = () => {
           >
             <h3>Let's Connect</h3>
             <p>Have a project idea in mind or want to discuss opportunities? Feel free to reach out!</p>
-            
+
             <div className="contact-methods">
               <div className="contact-method">
                 <span className="icon">📧</span>
@@ -71,34 +75,30 @@ const Contact = () => {
                   <a href="mailto:ashadeeppan18@gmail.com">ashadeeppan18@gmail.com</a>
                 </div>
               </div>
-              
+
               <div className="contact-method">
                 <span className="icon">💼</span>
                 <div>
                   <p className="label">LinkedIn</p>
-                  <a href="https://www.linkedin.com/in/ashadeep-pan" target="_blank" rel="noopener noreferrer">linkedin.com/in/ashadeep-pan</a>
+                  <a href="https://www.linkedin.com/in/ashadeep-pan" target="_blank" rel="noopener noreferrer">
+                    linkedin.com/in/ashadeep-pan
+                  </a>
                 </div>
               </div>
-              
+
               <div className="contact-method">
                 <span className="icon">🐙</span>
                 <div>
                   <p className="label">GitHub</p>
-                  <a href="https://github.com/Ashadeep2002" target="_blank" rel="noopener noreferrer">github.com/Ashadeep2002</a>
+                  <a href="https://github.com/Ashadeep2002" target="_blank" rel="noopener noreferrer">
+                    github.com/Ashadeep2002
+                  </a>
                 </div>
               </div>
-              
-              {/* <div className="contact-method">
-                <span className="icon">📞</span>
-                <div>
-                  <p className="label">Phone</p>
-                  <a href="tel:+91-8777387286">+91-8777387286</a>
-                </div>
-              </div> */}
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="contact-form-wrapper"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -160,8 +160,8 @@ const Contact = () => {
                 </div>
               )}
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="btn btn-primary"
                 disabled={isSubmitting}
               >

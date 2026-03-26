@@ -42,16 +42,20 @@ const Hero = () => {
           <h1 className="hero-title">
             Hi, I'm <span className="highlight">Ashadeep Pan</span>
           </h1>
+
           <p className="hero-subtitle">
             Full Stack Developer | MERN | AI/ML Enthusiast
           </p>
-          <p className="hero-description">
-            I build modern full-stack web applications, REST APIs, and AI/ML solutions.
-            Passionate about problem solving, scalable systems, and clean UI design.
+
+          <div className="hero-description">
+            <p>
+              I build modern full-stack web applications, REST APIs, and AI/ML solutions.
+              Passionate about problem solving, scalable systems, and clean UI design.
+            </p>
             <p>Always learning, always building.</p>
             <p>Available for: Full-time / Internship / Freelance</p>
             <p>📍 Kolkata, India</p>
-          </p>
+          </div>
         </motion.div>
 
         <motion.div 
@@ -61,12 +65,11 @@ const Hero = () => {
           <button className="btn btn-primary" onClick={scrollToContact}>
             📩 Get In Touch
           </button>
+
           <a
             className="btn btn-secondary"
-            href="/Ashadeep_Pan_CV.pdf"
+            href={process.env.PUBLIC_URL + "/Ashadeep_Pan_CV.pdf"}
             download="Ashadeep_Pan_CV.pdf"
-            target="_self"
-            rel="noopener noreferrer"
           >
             📄 Download CV
           </a>
@@ -85,13 +88,13 @@ const Hero = () => {
       >
         <div className="decoration-cube">
           <img 
-            src="/Portfolio_photo.jpeg" // Update this path to your actual photo file
-            alt="Ashadeep Pan" 
+            src={process.env.PUBLIC_URL + "/Portfolio_photo.jpeg"}
+            alt="Ashadeep Pan"
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              borderRadius: '18px' // slightly less than 20px to account for border
+              borderRadius: '18px'
             }}
           />
         </div>

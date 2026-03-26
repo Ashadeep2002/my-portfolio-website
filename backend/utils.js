@@ -1,6 +1,4 @@
-// Example utilities for backend if needed in the future
-
-// Email sending utility (optional enhancement)
+// Email sending utility 
 const nodemailer = require('nodemailer');
 
 const sendEmailNotification = async (contact) => {
