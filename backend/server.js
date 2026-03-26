@@ -11,14 +11,18 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: process.env.CORS_ORIGIN,
+  origin: [
+    "http://localhost:3000",
+    "https://ashadeep2002.github.io"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
-.then(() => console.log('✅ MongoDB connected'))
-.catch(err => console.log('❌ MongoDB error:', err));
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.log('MongoDB error:', err));
 
 // Routes
 app.use('/api', require('./routes'));

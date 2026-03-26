@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import './Contact.css';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://my-portfolio-website-74cz.onrender.com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
