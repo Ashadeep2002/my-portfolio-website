@@ -68,8 +68,8 @@ const Hero = () => {
 
           <a
             className="btn btn-secondary"
-            href={process.env.PUBLIC_URL + "/Ashadeep_Pan_Resume.pdf"}
-            download="Ashadeep_Pan_Resume.pdf"
+            href={process.env.PUBLIC_URL + "/Final_CV.pdf"}
+            download
           >
             📄 Download CV
           </a>
