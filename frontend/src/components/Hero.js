@@ -68,7 +68,7 @@ const Hero = () => {
 
           <a
             className="btn btn-secondary"
-            href= "/FINAL_CV.pdf"
+            href= "/Ashadeep_Pan_Resume.pdf"
             download="Ashadeep_Pan_Resume.pdf"
           >
             📄 Download CV
